@@ -52,10 +52,12 @@ export default async function handler(req, res) {
         В ответе должны быть только данные в заданном формате JSON, без вводных фраз и объяснений.
         Не используй разметку Markdown!
         Ответ в формате JSON:
+        {
             "postContent": "содержание поста должно быть в двойных кавычках, отформатированное в HTML разметку в которой
             могут быть только такие теги: p, h1, h2, h3, h4, h5, h6, strong, li, ol, ul",
             "title": "заголовок поста",
             "metaDescription: "краткое содержание поста",
+        }
         Ответ должен быть в скобках {}
         `,
       },
@@ -72,7 +74,7 @@ export default async function handler(req, res) {
   })
 
   const json = await postContentResponse.json()
-  const post = json.result.alternatives[0]?.message.text.split('\n').join('')
+  const post = json.result.alternatives[0]?.message.text.replace(/```/g, '').split('\n').join('')
   const { title, metaDescription, postContent, error } = parseJson(post)
 
   await db.collection('users').updateOne(
