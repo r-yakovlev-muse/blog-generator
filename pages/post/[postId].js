@@ -30,7 +30,7 @@ const Post = (props) => {
   }
 
   return (
-    <div className='overflow-auto max-h-screen'>
+    <div className='h-screen overflow-auto max-h-screen'>
       <div className='max-w-screen-lg mx-auto'>
         <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>
           Название статьи и описание
