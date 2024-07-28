@@ -9,9 +9,9 @@ export const Home = () => {
       <Image src={HeroImage} alt='Hero' fill className='absolute' />
       <div className='relative z-10 text-white px-10 py-5 text-center max-w-screen-sm bg-slate-900/90 rounded-md backdrop-blur-sm'>
         <Logo />
-        <p>The AI-powered SAAS solution to generate SEO-optimized blog posts in minutes</p>
+        <p>Генератор на YANDEX GPT, позволяющий генерировать посты для блога</p>
         <button className='btn' onClick={() => signIn('google', { callbackUrl: '/post/new' })}>
-          Begin
+          Начать
         </button>
       </div>
     </div>
