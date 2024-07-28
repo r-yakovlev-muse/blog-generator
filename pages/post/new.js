@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { getAppProps } from '../../helpers/getAppProps'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBrain } from '@fortawesome/free-solid-svg-icons'
-import { redirect } from 'next/dist/server/api-utils'
 
 const NewPost = () => {
   const [topic, setTopic] = useState('')
@@ -86,7 +85,6 @@ NewPost.getLayout = function getLayout(page, pageProps) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context)
-  const props = await getAppProps(context)
   if (!session) {
     return {
       redirect: {
@@ -95,6 +93,7 @@ export async function getServerSideProps(context) {
       },
     }
   }
+  const props = await getAppProps(context)
   if (!props.availableTokens) {
     return {
       redirect: {

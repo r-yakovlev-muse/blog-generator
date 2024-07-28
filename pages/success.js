@@ -17,7 +17,6 @@ Success.getLayout = function getLayout(page, pageProps) {
 }
 
 export async function getServerSideProps(context) {
-  const props = await getAppProps(context)
   const session = await getSession(context)
   if (!session) {
     return {
@@ -27,6 +26,7 @@ export async function getServerSideProps(context) {
       },
     }
   }
+  const props = await getAppProps(context)
   return {
     props,
   }

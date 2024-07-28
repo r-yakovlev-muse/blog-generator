@@ -30,7 +30,6 @@ TokenTopup.getLayout = function getLayout(page, pageProps) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context)
-  const props = await getAppProps(context)
   if (!session) {
     return {
       redirect: {
@@ -39,6 +38,7 @@ export async function getServerSideProps(context) {
       },
     }
   }
+  const props = await getAppProps(context)
   return {
     props,
   }
