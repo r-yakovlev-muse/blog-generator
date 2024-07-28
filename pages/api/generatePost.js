@@ -53,7 +53,7 @@ export default async function handler(req, res) {
         Не используй разметку Markdown!
         Ответ в формате JSON:
         {
-            "postContent": "содержание поста отформатированное в HTML разметку в которой
+            "postContent": "содержание поста должно быть в двойных кавычках, отформатированное в HTML разметку в которой
             могут быть только такие теги: p, h1, h2, h3, h4, h5, h6, strong, li, ol, ul",
             "title": "заголовок поста",
             "metaDescription: "краткое содержание поста",
