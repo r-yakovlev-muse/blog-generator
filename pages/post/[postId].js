@@ -33,13 +33,13 @@ const Post = (props) => {
     <div className='overflow-auto max-h-screen'>
       <div className='max-w-screen-lg mx-auto'>
         <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>
-          SEO title and meta description
+          Название статьи и описание
         </div>
         <div className='p-4 my-2 border border-stone-200 rounded-md'>
           <div className='text-blue-600 text-2xl font-bold'>{title}</div>
           <div className='mt-2'>{metaDescription}</div>
         </div>
-        <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>Keywords</div>
+        <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>Ключевые слова</div>
         <div className='flex flex-wrap pt-2 gap-1'>
           {keywords.split(',').map((keyword) => (
             <div className='p-2 rounded-full bg-slate-800 text-white' key={keyword}>
@@ -51,7 +51,7 @@ const Post = (props) => {
       </div>
       {error ? (
         <div className='max-w-screen-lg mx-auto my-5'>
-          <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>Blog post</div>
+          <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>Содержание поста</div>
           <h2>
             К сожалению нейронка от яндекса не может стабильно сгенерить JSON, потому что вот:
           </h2>

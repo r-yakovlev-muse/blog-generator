@@ -9,7 +9,7 @@ export const Home = () => {
       <Image src={HeroImage} alt='Hero' fill className='absolute' />
       <div className='relative z-10 text-white px-10 py-5 text-center max-w-screen-sm bg-slate-900/90 rounded-md backdrop-blur-sm'>
         <Logo />
-        <p>Генератор на YANDEX GPT, позволяющий генерировать посты для блога</p>
+        <p>Приложение на YANDEX GPT, позволяющее генерировать посты для блога за токены</p>
         <button className='btn' onClick={() => signIn('google', { callbackUrl: '/post/new' })}>
           Начать
         </button>

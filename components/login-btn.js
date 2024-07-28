@@ -18,7 +18,7 @@ export default function LoginBtn() {
         <div className='flex-1'>
           <div className='font-bold'>{session.user.email}</div>
           <div className='text-sm'>
-            <button onClick={() => signOut('google', { callbackUrl: '/' })}>Sign out</button>
+            <button onClick={() => signOut('google', { callbackUrl: '/' })}>Выйти</button>
           </div>
         </div>
       </>
