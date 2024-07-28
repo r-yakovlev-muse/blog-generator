@@ -65,7 +65,7 @@ const Post = (props) => {
         </div>
       ) : (
         <div className='max-w-screen-lg mx-auto'>
-          <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>Blog post</div>
+          <div className='text-sm font-bold mt-6 p-2 bg-stone-200 rounded-sm'>Содержание поста</div>
           <div dangerouslySetInnerHTML={{ __html: postContent }} />
           <div className='my-4'>
             {!showDeleteConfirm && (
