@@ -105,7 +105,6 @@ Post.getLayout = function getLayout(page, pageProps) {
 
 export async function getServerSideProps(context) {
   const session = await getSession(context)
-  const props = await getAppProps(context)
   if (!session) {
     return {
       redirect: {
@@ -114,7 +113,7 @@ export async function getServerSideProps(context) {
       },
     }
   }
-
+  const props = await getAppProps(context)
   const client = await clientPromise
   const db = client.db('testBlog')
   const user = await db.collection('users').findOne({
