@@ -11,13 +11,9 @@ export default async function handler(req, res) {
     const client = await clientPromise
     const db = client.db(DB_NAME)
 
-    console.log(user)
-
     const userProfile = await db.collection(USERS_COLLECTION).findOne({
       auth0Mail: user.email,
     })
-
-    console.log(userProfile)
 
     await db.collection(POSTS_COLLECTION).deleteOne({
       userId: userProfile._id,
